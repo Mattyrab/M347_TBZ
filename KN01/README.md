@@ -19,7 +19,7 @@ Docker Suche nach Ubuntu und nginx.
 
 `docker run -d -p 80:80 docker/getting-started`
 
-- `docker run`: Neue Container ersteelen und starten
+- `docker run`: Neue Container erstellen und starten
 - `-d`: Kürz für „detach“ (abtrennen) und führt den Container im Hintergrund aus (Daemon-Modus)
 - `-p 80:80`: Verknüpft Ports zwischen dem Host und dem Container. Der erste "80" ist der Host-Port und der zweite "80" ist der Container-Port
 - `docker/getting-started`: Der Name des auszuführenden Docker-Images. "docker" ist die Organisation/Benutzername
@@ -66,6 +66,14 @@ Ausgeführte Befehle:
 `docker pull ubuntu`  
 `docker pull nginx`  
 `docker tag nginx:latest mattytbz/m347:nginx`  
+
+- `docker tag`: Neue tag erstellen für eine bestehende Image
+- `nginx:latest`: Das zu taggende Image
+- `mattytbz/m347:nginx`: Besteht aus drei Teile. Als erstes kommt der Benutzer Name (`mattytbz`), danach der Repo-Name (`m347`), und als letztes der Tag-Name (`:nginx`)
+
 `docker push mattytbz/m347:nginx`  
+
+- `docker push`: Befehl zum Hochladen eines Images in ein remotes Repo
+- `mattytbz/m347:nginx`: Besteht aus drei Teile. Als erstes kommt der Benutzer Name (`mattytbz`), danach der Repo-Name (`m347`), und als letztes der Image mit der Tag-Name (`:nginx`)
 
 ![image with Tag](<Screenshot 2025-02-21 114302.png>)
