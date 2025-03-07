@@ -20,7 +20,7 @@ kn02a Image in der remote Repo
 ### DB Befehle
 
 `docker build -t mattytbz/kn02b-db:kn02b-db .`  
-`docker run -p 3306:3306 -p 80:80 -d mattytbz/kn02b-web:kn02b-web`
+`docker run -p 3306:3306 -d mattytbz/kn02b-web:kn02b-web`
 
 ### Web Befehle
 
