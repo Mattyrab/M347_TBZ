@@ -6,7 +6,7 @@ Das ausgeführte Query ist: <i>select Host, User from mysql.user;</i><br /><br /
 Das Resultat: <br />
 <?php
         //database
-        $servername = "127.0.0.1";
+        $servername = "kn02db";
         $username = "root";
         $password = "my-secret-pw";
         $dbname = "mysql";
