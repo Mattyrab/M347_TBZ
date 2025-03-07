@@ -19,12 +19,12 @@ kn02a Image in der remote Repo
 
 ### DB Befehle
 
-`docker build -t mattytbz/kn02b-db:kn02b-db .`
-`docker run -p 3306:3306 -p 80:80 -d mattytbz/kn02b-web:kn02b-web`
+`docker build -t mattytbz/kn02b-db:kn02b-db .`  
+`docker run --name kn02db -p 3306:3306 -d mattytbz/kn02b-db:kn02b-db`
 
 ### Web Befehle
 
-`docker build -t mattytbz/kn02b-web:kn02b-web .`
+`docker build -t mattytbz/kn02b-web:kn02b-web .`  
 `docker run --name kn02web -p 80:80 -d --link kn02db mattytbz/kn02b-web:kn02b-web`
 
 ### Telnet verbindung test
