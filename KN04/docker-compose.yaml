@@ -1,0 +1,42 @@
+      services:
+        web-app:
+          container_name: m347-kn04a-web
+          build: .
+          restart: unless-stopped
+          cpus: 1.0
+          tty: true
+          stdin_open: true
+          ports:
+            - 80:80
+          networks: 
+            - kn04-network
+          depends_on:
+            - db
+          environment:
+            - DB_HOST=m347-kn04a-db
+            - DB_USER=root
+            - DB_PASSWORD=my-secret-pw
+            - DB_NAME=mariadb
+
+        db:
+          container_name: m347-kn04a-db
+          image: mariadb:latest
+          restart: unless-stopped
+          cpus: 1.0
+          tty: true
+          stdin_open: true
+          networks:
+            - kn04-network
+          environment:
+            - MARIADB_DATABASE=mariadb
+            - MARIADB_ROOT_PASSWORD=my-secret-pw
+
+      networks:
+        kn04-network:
+          driver: bridge
+          ipam:
+              config:
+                  - 
+                    subnet: 172.10.0.0/16
+                    ip_range: 172.10.5.0/24
+                    gateway: 172.10.5.254
