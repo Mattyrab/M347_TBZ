@@ -16,7 +16,9 @@ IP's überprüfen
 
 ### Erkenntnisse von KN03
 
+Die Standard Netzwerk "bridge" besitzt keine interne DNS-Resolver, so dass die Containernamen nicht in die entsprechenden IPs aufgelöst werden.
 
+Die benutzerdefinierte Netzwerk "bridge" verfügt über einen internen DNS-Auflöser, so dass die Containernamen in die entsprechenden IPs aufgelöst werden. Dies funktioniert jedoch nur für Containers innerhalb des benutzerdefinierten Netzwerks
 
 ### Erkenntnisse von KN02
 
