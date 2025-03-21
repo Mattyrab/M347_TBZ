@@ -1,0 +1,24 @@
+services:
+  frontend:
+    image: nginx:latest
+    volumes:
+      - type: volume
+        source: volume-data
+        target: /home/data
+        volume:
+          nocopy: true
+      - type: bind
+        source: ./html
+        target: /usr/share/nginx/html
+      - type: tmpfs
+        target: /home
+        tmpfs:
+          size: 2048
+
+  backend:
+    image: nginx:latest
+    volumes:
+      - volume-data:/home/data
+
+volumes:
+  volume-data:
